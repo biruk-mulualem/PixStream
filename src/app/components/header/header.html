@@ -1,30 +1,45 @@
 <header>
-  <div class="container">
+  <div class="header-container">
     <!-- Logo -->
-    <div class="logo">
-      <img src="https://via.placeholder.com/50" alt="MediaVault Logo">
-      <span>PixStream</span>
+  <div class="logo">
+  <img src="https://picsum.photos/50/50?grayscale&random=1" alt="PixStream Logo">
+  <span>PixStream</span>
+</div>
+
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/categories">Categories</a></li>
+        <li><a routerLink="/upload">Upload</a></li>
+        <li><a routerLink="/aboutus">About</a></li>
+        <li><a routerLink="/contactus">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Search Bar -->
+    <div class="search">
+      <input type="text" placeholder="Search media...">
+      <button>Go</button>
     </div>
+
     <!-- Hamburger for mobile -->
     <div class="hamburger" (click)="toggleMenu()" [class.active]="menuOpen">
       <span></span>
       <span></span>
       <span></span>
     </div>
-    <!-- Nav + Search -->
-    <div class="nav-search" [class.open]="menuOpen">
-      <nav>
-        <ul>
-          <li><a routerLink="/">Home</a></li>
-          <li><a routerLink="/categories">Categories</a></li>
-          <li><a routerLink="/upload">Upload</a></li>
-          <li><a routerLink="/aboutus">About</a></li>
-          <li><a routerLink="/contactus">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="search">
-        <input type="text" placeholder="Search media...">
-      </div>
-    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" [class.open]="menuOpen">
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/categories">Categories</a></li>
+      <li><a routerLink="/upload">Upload</a></li>
+      <li><a routerLink="/aboutus">About</a></li>
+      <li><a routerLink="/contactus">Contact</a></li>
+    </ul>
   </div>
 </header>
