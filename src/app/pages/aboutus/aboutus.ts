@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+
+import { Header } from '../../components/header/header';
+import { Component, AfterViewInit } from '@angular/core';
+import { Footercard } from "../../components/footercard/footercard";
 
 @Component({
   selector: 'app-aboutus',
-  imports: [],
+  imports: [Header, Footercard],
   templateUrl: './aboutus.html',
-  styleUrl: './aboutus.css'
+  styleUrls: ['./aboutus.css']
 })
-export class Aboutus {
+export class Aboutus  {
+
 
 }

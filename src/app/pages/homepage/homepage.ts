@@ -1,28 +1,26 @@
 import { Component, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Header } from '../../components/header/header';
+import { Homepageaboutuscard } from '../../components/homepageaboutuscard/homepageaboutuscard';
+import { Homepageaudiocard } from '../../components/homepageaudiocard/homepageaudiocard';
+import { Homepagegalarycard } from '../../components/homepagegalarycard/homepagegalarycard';
+import { Homepageherobannercard } from '../../components/homepageherobannercard/homepageherobannercard';
+import { Homepagevideocard } from '../../components/homepagevideocard/homepagevideocard';
+import { Footercard } from '../../components/footercard/footercard';
+import { Homepagearticlecard } from "../../components/homepagearticlecard/homepagearticlecard";
+
+
+
+
+
+
 
 @Component({
   selector: 'app-homepage',
-  imports: [Header],
+  imports: [Header, Homepageaboutuscard, Homepageaudiocard, Homepagegalarycard, Homepageherobannercard, Homepagevideocard, Footercard, Homepagearticlecard,Homepagearticlecard],
   templateUrl: './homepage.html',
   styleUrls: ['./homepage.css']
 })
-export class Homepage implements AfterViewInit {
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+export class Homepage  {
 
-  ngAfterViewInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      let currentSlide = 0;
-      const slides = document.querySelectorAll('.hero-slide') as NodeListOf<HTMLElement>;
-
-      slides[currentSlide].classList.add('active');
-
-      setInterval(() => {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
-      }, 5000); // 5 seconds per slide
-    }
-  }
 }
