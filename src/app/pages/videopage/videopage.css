@@ -129,6 +129,13 @@
 
 
 
+.section-divider {
+  border: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #00c8ff, transparent);
+  margin: 3rem 0;
+  border-radius: 2px;
+}
 
 
 

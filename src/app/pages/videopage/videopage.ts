@@ -26,7 +26,7 @@ export class SafeUrlPipe implements PipeTransform {
     NgFor,
     Footercard,
     Header,
-    SafeUrlPipe  // <-- Register the pipe here
+    SafeUrlPipe
   ],
   templateUrl: './videopage.html',
   styleUrls: ['./videopage.css'],
@@ -34,7 +34,7 @@ export class SafeUrlPipe implements PipeTransform {
 export class Videopage {
   searchTerm: string = '';
   currentPage: number = 1;
-  itemsPerPage: number = 15;
+  itemsPerPage: number = 16;
 
   videoIds = [
     'dQw4w9WgXcQ',
@@ -56,6 +56,7 @@ export class Videopage {
     };
   });
 
+  /** --- FILTERED LIST --- **/
   get filteredVideos() {
     const term = this.searchTerm.toLowerCase();
     return this.videos.filter(
@@ -65,10 +66,20 @@ export class Videopage {
     );
   }
 
-  get paginatedVideos() {
-    const start = (this.currentPage - 1) * this.itemsPerPage;
-    return this.filteredVideos.slice(start, start + this.itemsPerPage);
+  /** --- RECENT VIDEOS (always top 4) --- **/
+  get recentVideos() {
+    return this.filteredVideos.slice(0, 4);
   }
+
+  /** --- PAGINATED LIST (excluding recent 4) --- **/
+get paginatedVideos() {
+  // Remove first 4 videos only once (they belong to "Recent Videos")
+  const withoutRecent = this.filteredVideos.slice(4);
+
+  const start = (this.currentPage - 1) * this.itemsPerPage;
+  return withoutRecent.slice(start, start + this.itemsPerPage);
+}
+
 
   visiblePages(): number[] {
     const total = this.totalPages();
@@ -91,10 +102,10 @@ export class Videopage {
 
     return Array.from({ length: end - start + 1 }, (_, i) => start + i);
   }
+totalPages() {
+  return Math.ceil((this.filteredVideos.length - 4) / this.itemsPerPage);
+}
 
-  totalPages() {
-    return Math.ceil(this.filteredVideos.length / this.itemsPerPage);
-  }
 
   changePage(page: number) {
     this.currentPage = page;

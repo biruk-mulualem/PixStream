@@ -12,8 +12,38 @@
     />
   </div>
 
-  <!-- Video Grid -->
-<section class="media-section">
+  <!-- Recent Videos -->
+
+<div *ngIf="currentPage === 1">
+  <div class="section-header">
+    <div class="section-title">
+      <h2>Recent Videos</h2>
+    </div>
+  </div>
+
+  <div class="media-row">
+    <div class="video-card" *ngFor="let video of recentVideos">
+      <div class="video-wrapper">
+        <iframe [src]="video.src | safeUrl" frameborder="0" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="card-overlay">
+        <h3>{{ video.title }}</h3>
+        <p class="category">{{ video.category }}</p>
+        <p>{{ video.description }}</p>
+      </div>
+    </div>
+  </div>
+  <hr class="section-divider" />
+</div>
+
+  <!-- All Videos -->
+  <div class="section-header">
+    <div class="section-title">
+      <span></span>
+      <h2>🎥 Explore Videos</h2>
+    </div>
+  </div>
+
   <div class="media-row">
     <div class="video-card" *ngFor="let video of paginatedVideos">
       <div class="video-wrapper">
@@ -30,49 +60,39 @@
         <p class="category">{{ video.category }}</p>
         <p>{{ video.description }}</p>
       </div>
-
-      <div class="video-info">
-        <span class="duration">{{ video.duration }}</span>
-        <span class="views">{{ video.views }}</span>
-      </div>
     </div>
   </div>
-</section>
-
-
 
   <!-- Pagination -->
-<div class="pagination">
-  <button
-    (click)="changePage(currentPage - 1)"
-    [disabled]="currentPage === 1"
-    aria-label="Previous page"
-    type="button"
-  >
-    Prev
-  </button>
+  <div class="pagination">
+    <button
+      (click)="changePage(currentPage - 1)"
+      [disabled]="currentPage === 1"
+      aria-label="Previous page"
+      type="button"
+    >
+      Prev
+    </button>
 
-  <button
-    *ngFor="let page of visiblePages()"
-    (click)="changePage(page)"
-    [class.active]="currentPage === page"
-    aria-label="Go to page {{ page }}"
-    type="button"
-  >
-    {{ page }}
-  </button>
+    <button
+      *ngFor="let page of visiblePages()"
+      (click)="changePage(page)"
+      [class.active]="currentPage === page"
+      aria-label="Go to page {{ page }}"
+      type="button"
+    >
+      {{ page }}
+    </button>
 
-  <button
-    (click)="changePage(currentPage + 1)"
-    [disabled]="currentPage === totalPages()"
-    aria-label="Next page"
-    type="button"
-  >
-    Next
-  </button>
-</div>
-
-
+    <button
+      (click)="changePage(currentPage + 1)"
+      [disabled]="currentPage === totalPages()"
+      aria-label="Next page"
+      type="button"
+    >
+      Next
+    </button>
+  </div>
 </section>
 
 <app-footercard></app-footercard>

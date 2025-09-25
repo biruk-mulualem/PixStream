@@ -4,6 +4,7 @@ import { Contactus } from './pages/contactus/contactus';
 import { Homepage } from './pages/homepage/homepage';
 import { Articlepage } from './pages/articlepage/articlepage';
 import { Videopage } from './pages/videopage/videopage';
+import { Gallarypage } from './pages/gallarypage/gallarypage';
 
 export const routes: Routes = [
   { path: '', component: Homepage },
@@ -11,5 +12,6 @@ export const routes: Routes = [
   { path: 'contactus', component: Contactus },
     { path: 'articlepage', component: Articlepage },
         { path: 'videopage', component: Videopage },
+                { path: 'gallarypage', component: Gallarypage },
   { path: '**', redirectTo: '' }
 ];

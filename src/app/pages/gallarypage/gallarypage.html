@@ -1,1 +1,18 @@
-<p>gallarypage works!</p>
+<app-header></app-header>
+<app-header></app-header>
+
+<section class="creative-gallery">
+  <div class="gallery-row">
+    <div class="gallery-card" *ngFor="let item of galleryItems">
+      <img [src]="item.image" alt="{{item.title}}">
+      <div class="card-overlay">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footercard></app-footercard>
+
+<app-footercard></app-footercard>
