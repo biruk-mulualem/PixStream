@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Header } from '../../components/header/header';
 import { Footercard } from '../../components/footercard/footercard';
 @Component({
-  selector: 'app-contactus',
-  imports: [Footercard,Header],
-  templateUrl: './contactus.html',
-  styleUrl: './contactus.css'
+  selector: 'app-articlepage',
+  imports: [Header,Footercard],
+  templateUrl: './articlepage.html',
+  styleUrl: './articlepage.css'
 })
-export class Contactus {
+export class Articlepage {
 
 }

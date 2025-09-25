@@ -1,0 +1,91 @@
+.contact-layout {
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  background: #FAFAFA;
+  color: #333;
+}
+
+.contact-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+}
+
+.contact-intro h2 {
+  font-size: 2rem;
+  color: #E63946;
+  margin-bottom: 0.5rem;
+}
+
+.contact-intro p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.contact-info, .faq-section {
+  flex: 1 1 45%;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info h3,
+.faq-section h3 {
+  color: #E63946;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+}
+
+.social-links a {
+  color: #E63946;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+.faq-section details {
+  margin-bottom: 1rem;
+  background: #fff5f5;
+  padding: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.faq-section summary {
+  font-weight: bold;
+}
+
+.faq-section p {
+  margin-top: 0.5rem;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    flex-direction: column;
+  }
+
+  .contact-intro h2 {
+    font-size: 1.6rem;
+  }
+}

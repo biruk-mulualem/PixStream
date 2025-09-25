@@ -45,7 +45,7 @@
   transform: translate(-50%, -50%);
   text-align: center;
   color: #fff;
-  max-width: 90%;
+  max-width: 100%;
 }
 
 .hero-text h1 {
@@ -564,7 +564,7 @@
   text-align: center;
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15); /* modern soft shadow */
   border: 1px solid #eee;
-  max-width: 1200px;   /* neat readable width */
+  max-width: 95%;   /* neat readable width */
   width: 100%;         /* responsive for small screens */
 }
 
