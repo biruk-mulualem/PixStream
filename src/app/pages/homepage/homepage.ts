@@ -1,13 +1,13 @@
 import { Component, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Header } from '../../components/header/header';
-import { Homepageaboutuscard } from '../../components/homepageaboutuscard/homepageaboutuscard';
-import { Homepageaudiocard } from '../../components/homepageaudiocard/homepageaudiocard';
-import { Homepagegalarycard } from '../../components/homepagegalarycard/homepagegalarycard';
-import { Homepageherobannercard } from '../../components/homepageherobannercard/homepageherobannercard';
-import { Homepagevideocard } from '../../components/homepagevideocard/homepagevideocard';
+import { Homepageaboutuscard } from '../../components/homepagecards/homepageaboutuscard/homepageaboutuscard';
+import { Homepageaudiocard } from '../../components/homepagecards/homepageaudiocard/homepageaudiocard';
+import { Homepagegalarycard } from '../../components/homepagecards/homepagegalarycard/homepagegalarycard';
+import { Homepageherobannercard } from '../../components/homepagecards/homepageherobannercard/homepageherobannercard';
+import { Homepagevideocard } from '../../components/homepagecards/homepagevideocard/homepagevideocard';
 import { Footercard } from '../../components/footercard/footercard';
-import { Homepagearticlecard } from "../../components/homepagearticlecard/homepagearticlecard";
+import { Homepagearticlecard } from "../../components/homepagecards/homepagearticlecard/homepagearticlecard";
 
 
 

@@ -1,0 +1,60 @@
+<div class="dashboard">
+
+  <header class="header">
+    <div class="logo">LOGO</div>
+    <div class="title">Admin Dashboard</div>
+
+    <!-- Hamburger menu for small screens -->
+    <button class="sidebar-toggle" (click)="toggleSidebar()">☰</button>
+
+    <div class="user-control">
+      <button (click)="toggleUserMenu()">User ▼</button>
+      <ul *ngIf="userMenuOpen" class="dropdown-menu">
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="main">
+    <nav class="sidebar" [class.closed]="sidebarClosed">
+      <ul>
+        <li
+          *ngFor="let item of uploadItems"
+          [class.active]="item === selectedItem"
+          (click)="selectItem(item); closeSidebarOnMobile()">
+          {{ item }}
+        </li>
+      </ul>
+    </nav>
+
+    <section class="body">
+
+      <!-- Video Section -->
+      <div *ngIf="selectedItem === 'Video'" class="upload-section">
+        <h2>Upload Video</h2>
+        <!-- Your video upload UI here -->
+      </div>
+
+      <!-- Gallery Section -->
+      <div *ngIf="selectedItem === 'Gallery'" class="upload-section">
+        <h2>Upload Gallery</h2>
+        <!-- Your gallery upload UI here -->
+      </div>
+
+      <!-- Audio Section -->
+      <div *ngIf="selectedItem === 'Audio'" class="upload-section">
+        <h2>Upload Audio</h2>
+        <!-- Your audio upload UI here -->
+      </div>
+
+      <!-- Article Section -->
+      <div *ngIf="selectedItem === 'Article'" class="upload-section">
+        <h2>Upload Article</h2>
+        <!-- Your article upload UI here -->
+      </div>
+
+    </section>
+  </div>
+
+</div>

@@ -8,39 +8,47 @@
       type="text"
       [(ngModel)]="searchTerm"
       placeholder="Search by title or category"
-      aria-label="Search videos by title or category"
-    />
+      aria-label="Search videos by title or category" />
   </div>
 
-  <!-- Recent Videos -->
 
-<div *ngIf="currentPage === 1">
-  <div class="section-header">
-    <div class="section-title">
-      <h2>Recent Videos</h2>
-    </div>
-  </div>
 
-  <div class="media-row">
-    <div class="video-card" *ngFor="let video of recentVideos">
-      <div class="video-wrapper">
-        <iframe [src]="video.src | safeUrl" frameborder="0" allowfullscreen loading="lazy"></iframe>
-      </div>
-      <div class="card-overlay">
-        <h3>{{ video.title }}</h3>
-        <p class="category">{{ video.category }}</p>
-        <p>{{ video.description }}</p>
+
+
+
+
+  <div *ngIf="currentPage === 1">
+    <div class="section-header">
+      <div class="section-title">
+
+        <span></span>
+        <h2>Recent Videos</h2>
+        <span></span>
       </div>
     </div>
+
+    <div class="media-row">
+      <div class="video-card" *ngFor="let video of recentVideos">
+        <div class="video-wrapper">
+          <iframe [src]="video.src | safeUrl" frameborder="0" allowfullscreen
+            loading="lazy"></iframe>
+        </div>
+        <div class="card-overlay">
+          <h3>{{ video.title }}</h3>
+          <p class="category">{{ video.category }}</p>
+          <p>{{ video.description }}</p>
+        </div>
+      </div>
+    </div>
+    <hr class="section-divider" />
   </div>
-  <hr class="section-divider" />
-</div>
 
   <!-- All Videos -->
   <div class="section-header">
     <div class="section-title">
       <span></span>
       <h2>🎥 Explore Videos</h2>
+      <span></span>
     </div>
   </div>
 
@@ -51,8 +59,7 @@
           [src]="video.src | safeUrl"
           frameborder="0"
           allowfullscreen
-          loading="lazy"
-        ></iframe>
+          loading="lazy"></iframe>
       </div>
 
       <div class="card-overlay">
@@ -69,8 +76,7 @@
       (click)="changePage(currentPage - 1)"
       [disabled]="currentPage === 1"
       aria-label="Previous page"
-      type="button"
-    >
+      type="button">
       Prev
     </button>
 
@@ -79,8 +85,7 @@
       (click)="changePage(page)"
       [class.active]="currentPage === page"
       aria-label="Go to page {{ page }}"
-      type="button"
-    >
+      type="button">
       {{ page }}
     </button>
 
@@ -88,8 +93,7 @@
       (click)="changePage(currentPage + 1)"
       [disabled]="currentPage === totalPages()"
       aria-label="Next page"
-      type="button"
-    >
+      type="button">
       Next
     </button>
   </div>
