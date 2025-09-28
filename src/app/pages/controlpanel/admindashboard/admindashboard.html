@@ -1,60 +1,48 @@
 <div class="dashboard">
-
+  <!-- Header -->
   <header class="header">
-    <div class="logo">LOGO</div>
-    <div class="title">Admin Dashboard</div>
+    <div class="left-header">
+      <!-- Mobile menu toggle -->
+      <button class="menu-toggle" (click)="toggleSidebar()">☰</button>
 
-    <!-- Hamburger menu for small screens -->
-    <button class="sidebar-toggle" (click)="toggleSidebar()">☰</button>
+      <!-- Logo -->
+      <div class="logo">
+        <img src="https://via.placeholder.com/40" alt="Logo">
+        <span>Admin</span>
+      </div>
+    </div>
 
     <div class="user-control">
-      <button (click)="toggleUserMenu()">User ▼</button>
+      <button (click)="toggleUserMenu()">Admin ▼</button>
       <ul *ngIf="userMenuOpen" class="dropdown-menu">
         <li><a href="#">Profile</a></li>
-        <li><a href="#">Logout</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="/cpanel">Logout</a></li>
       </ul>
     </div>
   </header>
 
-  <div class="main">
-    <nav class="sidebar" [class.closed]="sidebarClosed">
+  <div class="content">
+    <!-- Sidebar -->
+    <nav class="sidebar" [class.open]="sidebarOpen">
       <ul>
-        <li
-          *ngFor="let item of uploadItems"
-          [class.active]="item === selectedItem"
-          (click)="selectItem(item); closeSidebarOnMobile()">
+        <li *ngFor="let item of uploadItems"
+            [class.active]="item === selectedItem"
+            (click)="selectItem(item)">
           {{ item }}
         </li>
       </ul>
     </nav>
 
-    <section class="body">
+    <!-- Body -->
+<main class="body">
+  <ng-container [ngSwitch]="selectedItem">
+    <app-videocard *ngSwitchCase="'Video'"></app-videocard>
+    <app-gallerycard *ngSwitchCase="'Gallery'"></app-gallerycard>
+    <app-audiocard *ngSwitchCase="'Audio'"></app-audiocard>
+    <app-articlecard *ngSwitchCase="'Article'"></app-articlecard>
+  </ng-container>
+</main>
 
-      <!-- Video Section -->
-      <div *ngIf="selectedItem === 'Video'" class="upload-section">
-        <h2>Upload Video</h2>
-        <!-- Your video upload UI here -->
-      </div>
-
-      <!-- Gallery Section -->
-      <div *ngIf="selectedItem === 'Gallery'" class="upload-section">
-        <h2>Upload Gallery</h2>
-        <!-- Your gallery upload UI here -->
-      </div>
-
-      <!-- Audio Section -->
-      <div *ngIf="selectedItem === 'Audio'" class="upload-section">
-        <h2>Upload Audio</h2>
-        <!-- Your audio upload UI here -->
-      </div>
-
-      <!-- Article Section -->
-      <div *ngIf="selectedItem === 'Article'" class="upload-section">
-        <h2>Upload Article</h2>
-        <!-- Your article upload UI here -->
-      </div>
-
-    </section>
   </div>
-
 </div>

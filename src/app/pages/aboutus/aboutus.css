@@ -91,7 +91,7 @@ body {
   color: #555;
 }
 
-/* --- About / Mission Images --- */
+/* --- About Our Foundation --- */
 .mission-images {
   padding: 6rem 1rem;
   background: #fff;
@@ -185,80 +185,7 @@ body {
   font-weight: 500;
 }
 
-/* --- Team --- */
-.team {
-  padding: 5rem 1rem;
-  text-align: center;
-}
-.team-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-.team-card {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 20px;
-  width: 220px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
-  transition: all 0.3s ease;
-}
-.team-card:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-}
-.team-card img {
-  width: 100%;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-}
-.team-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.3rem;
-}
-.team-card p {
-  font-size: 0.95rem;
-  color: #555;
-}
-
-/* --- Testimonials --- */
-.testimonials {
-  padding: 5rem 1rem;
-  background: #f2f6f8;
-  text-align: center;
-}
-.testimonial-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-.testimonial-card {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 20px;
-  max-width: 350px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
-  transition: all 0.3s ease;
-}
-.testimonial-card:hover {
-  transform: translateY(-10px);
-}
-.testimonial-card p {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 1rem;
-}
-.testimonial-card h4 {
-  font-size: 0.95rem;
-  color: #999;
-}
-
-
-
-
-/* --- Call-to-Action Section --- */
+/* --- Call-to-Action --- */
 .cta-section {
   padding: 5rem 2rem;
   background: linear-gradient(135deg, #ff6b6b, #fcb97d);
@@ -279,7 +206,6 @@ body {
 .cta-section p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  color: #fdfdfd;
   line-height: 1.6;
 }
 .cta-section .btn-hero {
@@ -298,169 +224,31 @@ body {
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* Optional: subtle animated background shapes */
-.cta-section::before {
-  content: '';
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 50%;
-  top: -50px;
-  left: -50px;
-  animation: float 6s infinite alternate;
-}
-.cta-section::after {
-  content: '';
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: rgba(255,255,255,0.08);
-  border-radius: 50%;
-  bottom: -100px;
-  right: -100px;
-  animation: float 8s infinite alternate-reverse;
-}
-
-@keyframes float {
-  from { transform: translateY(0) translateX(0); }
-  to { transform: translateY(20px) translateX(20px); }
-}
-
+/* --- Responsive --- */
 @media (max-width: 768px) {
-  .cta-section h2 { font-size: 2rem; }
-  .cta-section p { font-size: 1rem; }
-  .cta-section .btn-hero { padding: 0.8rem 2rem; }
-}
-/* --- Team Horizontal Scroll --- */
-.team-grid {
-  display: flex;
-  overflow-x: auto;
-  gap: 2rem;
-  padding-bottom: 1rem;
-  scroll-behavior: smooth;
-}
-.team-grid::-webkit-scrollbar {
-  height: 8px;
-}
-.team-grid::-webkit-scrollbar-track {
-  background: #f0f0f0;
-  border-radius: 4px;
-}
-.team-grid::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 4px;
-}
-.team-grid::-webkit-scrollbar-thumb:hover {
-  background: #999;
-}
-
-/* --- Testimonials Horizontal Scroll --- */
-.testimonial-grid {
-  display: flex;
-  overflow-x: auto;
-  gap: 2rem;
-  padding-bottom: 1rem;
-  scroll-behavior: smooth;
-}
-.testimonial-grid::-webkit-scrollbar {
-  height: 8px;
-}
-.testimonial-grid::-webkit-scrollbar-track {
-  background: #f2f2f2;
-  border-radius: 4px;
-}
-.testimonial-grid::-webkit-scrollbar-thumb {
-  background: #bbb;
-  border-radius: 4px;
-}
-.testimonial-grid::-webkit-scrollbar-thumb:hover {
-  background: #888;
-}
-
-/* Ensure cards don't shrink too much */
-.team-card, .testimonial-card {
-  flex: 0 0 auto; /* Prevent shrinking, keep fixed width */
-}
-/* --- Horizontal scroll for Team and Testimonials --- */
-.team-grid, .testimonial-grid {
-  display: flex;
-  overflow-x: auto;
-  gap: 2rem;
-  padding-bottom: 1rem;
-  scroll-behavior: smooth;
-}
-.team-grid::-webkit-scrollbar, .testimonial-grid::-webkit-scrollbar {
-  height: 8px;
-}
-.team-grid::-webkit-scrollbar-track, .testimonial-grid::-webkit-scrollbar-track {
-  background: #f0f0f0;
-  border-radius: 4px;
-}
-.team-grid::-webkit-scrollbar-thumb, .testimonial-grid::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 4px;
-}
-.team-grid::-webkit-scrollbar-thumb:hover, .testimonial-grid::-webkit-scrollbar-thumb:hover {
-  background: #999;
-}
-
-/* Ensure cards do not shrink */
-.team-card, .testimonial-card {
-  flex: 0 0 auto;
-}
-
-/* Optional: make scrolling nice on mobile */
-@media (max-width: 768px) {
-  .team-grid, .testimonial-grid {
-    gap: 1rem;
-    padding-bottom: 1rem;
+  .hero-content h1 {
+    font-size: 2rem;
   }
-}
-
-
-.team-carousel, .testimonial-carousel {
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 2rem;
-}
-
-.team-grid, .testimonial-grid {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  padding-bottom: 1rem;
-}
-
-.team-card, .testimonial-card {
-  flex: 0 0 250px;
-  scroll-snap-align: start;
-}
-
-/* Hide scrollbar */
-.team-grid::-webkit-scrollbar, .testimonial-grid::-webkit-scrollbar {
-  display: none;
-}
-
-/* Dots */
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.carousel-dots span {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #ccc;
-  cursor: pointer;
-  display: inline-block;
-  transition: background 0.3s;
-}
-
-.carousel-dots span.active {
-  background: #ff6b6b;
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .mission-vision .container,
+  .mission-images-container {
+    flex-direction: column;
+  }
+  .mission-images-right .img-small {
+    position: relative;
+    width: 80%;
+    bottom: 0;
+    right: 0;
+  }
+  .impact-stats .stats-container {
+    flex-direction: column;
+  }
+  .cta-section h2 {
+    font-size: 2rem;
+  }
+  .cta-section p {
+    font-size: 1rem;
+  }
 }
